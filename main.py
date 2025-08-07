@@ -727,7 +727,7 @@ class TD3Agent:
                 y = r_th + self.config['gamma'] * (1.0 - d_th) * q_next
 
             q1, q2 = self.critic(s_norm_th, a_th)
-            critic_loss = F.mse_loss(q1, y) + F.mse_loss(q2, y)
+            critic_loss = F.mse_loss(y, q1) + F.mse_loss(y, q2)
             self.critic_optimizer.zero_grad(); critic_loss.backward(); self.critic_optimizer.step()
             critic_losses.append(critic_loss.item())
             
