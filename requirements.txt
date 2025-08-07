@@ -1,0 +1,8 @@
+gymnasium
+numpy
+pandas
+matplotlib
+scipy
+wandb
+ipykernel
+gymnasium-robotics
